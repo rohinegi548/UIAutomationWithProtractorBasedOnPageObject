@@ -1,0 +1,29 @@
+{
+  "name": "protractor_practice",
+  "version": "1.0.0",
+  "description": "Sample UI Automation with protractor and page object pattern",
+  "main": "conf.js",
+  "scripts": {
+    "test": "protractor conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohinegi548/UIAutomationWithProtractorBasedOnPageObject.git"
+  },
+  "keywords": [
+    "protractor",
+    "jasmine"
+  ],
+  "author": "rohitnegi548@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rohinegi548/UIAutomationWithProtractorBasedOnPageObject/issues"
+  },
+  "homepage": "https://github.com/rohinegi548/UIAutomationWithProtractorBasedOnPageObject#readme",
+  "dependencies": {
+    "jasmine-allure-reporter": "^1.0.2",
+    "jasmine-data-provider": "^2.2.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "protractor": "^5.3.2"
+  }
+}
