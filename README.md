@@ -11,14 +11,18 @@ Angular JS applications have some extra HTML attributes like ng-repeater, ng-con
     <li> Java should be installed on your system. </li>
     <li>NodeJS, to install protractor you should have npm manager install which comes by default with NodeJS </li></ul>
 
-<br><p>Install NodeJS from https://nodejs.org/. Verify it if has been installed using terminal type, either node -v or node --version, same for npm too. you will see output like this:
+<br><p>Install NodeJS from https://nodejs.org/. <br>
+    Verify it if has been installed using terminal type, either node -v or node --version, same for npm too. you will see output like this:<br>
+    <img src="https://github.com/rohinegi548/UIAutomationWithProtractorBasedOnPageObject/blob/master/images/Screenshot%20from%202018-05-22%2016-34-45.png"/>
 
 <p>Install protractor using this command: sudo npm install -g protractor (-g option for install it in global location) or if want to use locally for particular project use sudo npm install protractor –save.
 
 <p>Verify using this:
+    <img src="https://github.com/rohinegi548/UIAutomationWithProtractorBasedOnPageObject/blob/master/images/Screenshot%20from%202018-05-22%2016-44-35.png"/>
 
 
 <p>Now you have done with setup of protractor, to test your setup you can run example conf.js provided by protractor. Go to node_modules/protractor/example folder and type this command: you will see your browser has invoked and tests are executing.
+    <img src="https://github.com/rohinegi548/UIAutomationWithProtractorBasedOnPageObject/blob/master/images/Screenshot%20from%202018-05-22%2016-49-21.png"/>
 
 
 Now you can go ahead with your advance level tests configuration and management.</p>
@@ -39,111 +43,111 @@ Now you can go ahead with your advance level tests configuration and management.
 <li>-verifying login with invalid username/password</li>
 
 <br><b>Project Structure:</b>
-
+<img src="https://github.com/rohinegi548/UIAutomationWithProtractorBasedOnPageObject/blob/master/images/Screenshot%20from%202018-05-22%2017-33-51.png"/>
 
 
 <p>Additionally jasmine is inbuilt framework comes with protractor, so if you are going to use jasmine spec reporter  you have to install it :
 
-$ npm install jasmine-spec-reporter --save
+<br>$ npm install jasmine-spec-reporter --save
 
 and define them in conf.js
 
-let SpecReporter = require('jasmine-spec-reporter').SpecReporter;
+<br>let SpecReporter = require('jasmine-spec-reporter').SpecReporter;
 
-onPrepare: function() {
-   jasmine.getEnv().addReporter(new SpecReporter({
-   displayFailuresSummary: true,
-   displayFailuredSpec: false,
-   displaySuiteNumber: true,
-   displaySpecDuration: true
-   }));
-}
+<br>onPrepare: function() {
+   <br>jasmine.getEnv().addReporter(new SpecReporter({
+   <br>displayFailuresSummary: true,
+   <br>displayFailuredSpec: false,
+   <br>displaySuiteNumber: true,
+   <br>displaySpecDuration: true
+   <br>}));
+<br>}
 
 
-<b>Reading data using Json file:</b><br>
+<br><b>Reading data using Json file:</b><br>
 
 sample json file content: 
 
 [
-{ 
-"username" : "rohitnegi",
-"password" : "Test@12345",
-"answer" : "dehradun"
-},
+<br>{ 
+<br>"username" : "rohitnegi",
+<br>"password" : "Test@12345",
+<br>"answer" : "dehradun"
+<br>},
 
-{
-"username" : "testuser",
-"password" : "Test@12345",
-"answer" : "dehradun"
-}
+<br>{
+<br>"username" : "testuser",
+<br>"password" : "Test@12345",
+<br>"answer" : "dehradun"
+<br>}
 
-]
+<br>]
 
  
 
-<b>How to use in your test:</b><br>
+<br><b>How to use in your test:</b><br>
 
 var LoginData = require('../testdata/LoginData.json');
 
 
-LoginData.forEach(function(data, username, password) {
-it('Login with: '+data.username+" and "+data.password, function() {
+<br>LoginData.forEach(function(data, username, password) {
+<br>it('Login with: '+data.username+" and "+data.password, function() {
    
-  LoginObj.get();
+  <br>LoginObj.get();
    
-   LoginObj.login(data.username, data.password, data.answer);
-    expect(HomeObj.isLogoutDisplays());
-})
-  });
+   <br>LoginObj.login(data.username, data.password, data.answer);
+    <br>expect(HomeObj.isLogoutDisplays());
+<br>})
+  <br>});
 
 
-<b>Reading data using JS files: more usable and understandable</b><br>
+<br><b>Reading data using JS files: more usable and understandable</b><br>
 
 'use strict';
 
-module.exports = {
-LoginWithValidUserPasswd: {
-'Valid Username/Password': {username: 'rohitnegi', password: 'Test@12345', answer: 'dehradun'},
-//'Invalid Username/Correct Password': {username: 'testuser', password: 'Test@12345', answer: 'kusum'},
-//'Invalid Username/Invalid Password': {username: 'testuser', password: 'Test@1234', answer: 'kusum'},
-//'Valid Username/Invalid Password': {username: 'rohitnegi', password: 'Test@1234', answer: 'kusum'}
-},
+<br>module.exports = {
+<br>LoginWithValidUserPasswd: {
+<br>'Valid Username/Password': {username: 'rohitnegi', password: 'Test@12345', answer: 'dehradun'},
+<br>//'Invalid Username/Correct Password': {username: 'testuser', password: 'Test@12345', answer: 'kusum'},
+<br>//'Invalid Username/Invalid Password': {username: 'testuser', password: 'Test@1234', answer: 'kusum'},
+<br>//'Valid Username/Invalid Password': {username: 'rohitnegi', password: 'Test@1234', answer: 'kusum'}
+<br>},
 
-LoginWithInvalidUserPasswd: {
-// 'Valid Username/Password': {username: 'rohitnegi', password: 'Test@12345', answer: 'dehradun'},
-'Invalid Username/Password': {username: 'testuser', password: 'Test@12345', answer: 'kusum'},
-//'Invalid Username/Invalid Password': {username: 'testuser', password: 'Test@1234', answer: 'kusum'},
-//'Valid Username/Invalid Password': {username: 'rohitnegi', password: 'Test@1234', answer: 'kusum'}
-}
-}
+<br>LoginWithInvalidUserPasswd: {
+<br>// 'Valid Username/Password': {username: 'rohitnegi', password: 'Test@12345', answer: 'dehradun'},
+<br>'Invalid Username/Password': {username: 'testuser', password: 'Test@12345', answer: 'kusum'},
+<br>//'Invalid Username/Invalid Password': {username: 'testuser', password: 'Test@1234', answer: 'kusum'},
+<br>//'Valid Username/Invalid Password': {username: 'rohitnegi', password: 'Test@1234', answer: 'kusum'}
+<br>}
+<br>}
 
 
-<b>How to use in your tests:</b><br>
+<br><b>How to use in your tests:</b><br>
 
-For this, first you have to install jasmine data provider by: <br>
-$ npm install jasmine-data-provider --save<br><br>
+<br>For this, first you have to install jasmine data provider by: <br>
+<br>$ npm install jasmine-data-provider --save<br><br>
 
 after this you have to call ‘using’ with you test to pass data
 
-var LoginData = require('../testdata/LoginData.js');
-var using = require('jasmine-data-provider');
+<br>var LoginData = require('../testdata/LoginData.js');
+<br>var using = require('jasmine-data-provider');
 
-using(LoginData.LoginWithValidUserPasswd, function(data, description) {
-it('Login with: '+description, function() {
+<br>using(LoginData.LoginWithValidUserPasswd, function(data, description) {
+<br>it('Login with: '+description, function() {
      
-    LoginObj.get();
+    <br>LoginObj.get();
      
-     LoginObj.login(data.username, data.password, data.answer);
+     <br>LoginObj.login(data.username, data.password, data.answer);
      
-expect(HomeObj.isLogoutDisplays());
-})
-    });
+<br>expect(HomeObj.isLogoutDisplays());
+<br>})
+    <br>});
 
 
 <p><b>Reporting</b>: Allure is awesome reporting framework which you can use to generate test results having capability to attach screenshots as well.
 
-<b>How to use: You have to install jasmine-allure-reporter</b><br>
-$ npm install jasmine-allure-reporter –save<br>
+<br><b>How to use: You have to install jasmine-allure-reporter</b><br>
+<br>$ npm install jasmine-allure-reporter –save<br>
 
 After installation these packages you can find them under node_modules folder.<br>
 
@@ -151,26 +155,26 @@ After installation these packages you can find them under node_modules folder.<b
 <br>
 onPrepare: function() {
 
-// Add a screenshot reporter:
-var AllureReporter = require('jasmine-allure-reporter');
-   jasmine.getEnv().addReporter(new AllureReporter({
-   resultsDir: 'allure-results'
-}));
-   jasmine.getEnv().afterEach(function(done){
-browser.takeScreenshot().then(function (png) {
-allure.createAttachment('Screenshot', function () {
-return new Buffer(png, 'base64')
-}, 'image/png')();
-done();
-})
-}); 
-}
+<br>// Add a screenshot reporter:
+<br>var AllureReporter = require('jasmine-allure-reporter');
+   <br>jasmine.getEnv().addReporter(new AllureReporter({
+   <br>resultsDir: 'allure-results'
+<br>}));
+  <br> jasmine.getEnv().afterEach(function(done){
+<br>browser.takeScreenshot().then(function (png) {
+<br>allure.createAttachment('Screenshot', function () {
+<br>return new Buffer(png, 'base64')
+<br>}, 'image/png')();
+<br>done();
+<br>})
+<br>}); 
+<br>}
 
 <br><br><p>One last thing, as everytime your test will run so many json files will generate under allure-results directory. By default earlier generated files does not get deleted/removed, so when allure report generates, it’ll aggregate results for all the data not the latest run.
 
 <br>To overcome this problem you can use maven:<br>
 
-$ sudo apt-get install maven
+<br>$ sudo apt-get install maven
 
 <br>Now before executing your tests you can clean your not required files using ‘clean’ goal of maven using ‘mvn clean’
 
