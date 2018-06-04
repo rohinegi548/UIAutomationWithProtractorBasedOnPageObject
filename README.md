@@ -1,3 +1,4 @@
+<pre>
 <b>#protractor_practice</b>
 <h2>UI Automation with Protractor</h2><br>
 Sample protractor based UI automation with page object pattern
@@ -197,3 +198,4 @@ onPrepare: function() {
 <br>You can find jetty configuraton in pom.xml too.
 
 <br>In case you like it, please do share, hit like...
+</pre>
