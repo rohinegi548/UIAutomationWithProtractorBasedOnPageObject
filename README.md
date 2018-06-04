@@ -1,4 +1,4 @@
-<pre>
+
 <b>#protractor_practice</b>
 <h2>UI Automation with Protractor</h2><br>
 Sample protractor based UI automation with page object pattern
@@ -14,16 +14,22 @@ Angular JS applications have some extra HTML attributes like ng-repeater, ng-con
 
 <br><p>Install NodeJS from https://nodejs.org/. <br>
     Verify it if has been installed using terminal type, either node -v or node --version, same for npm too. you will see output like this:<br>
+    
     <img src="https://github.com/rohinegi548/UIAutomationWithProtractorBasedOnPageObject/blob/master/images/Screenshot%20from%202018-05-22%2016-34-45.png"/>
+
 
 <p>Install protractor using this command: sudo npm install -g protractor (-g option for install it in global location) or if want to use locally for particular project use sudo npm install protractor –save.
 
 <p>Verify using this:
+    
     <img src="https://github.com/rohinegi548/UIAutomationWithProtractorBasedOnPageObject/blob/master/images/Screenshot%20from%202018-05-22%2016-44-35.png"/>
 
 
+
 <p>Now you have done with setup of protractor, to test your setup you can run example conf.js provided by protractor. Go to node_modules/protractor/example folder and type this command: you will see your browser has invoked and tests are executing.
+
     <img src="https://github.com/rohinegi548/UIAutomationWithProtractorBasedOnPageObject/blob/master/images/Screenshot%20from%202018-05-22%2016-49-21.png"/>
+
 
 
 Now you can go ahead with your advance level tests configuration and management.</p>
@@ -44,7 +50,9 @@ Now you can go ahead with your advance level tests configuration and management.
 <li>-verifying login with invalid username/password</li>
 
 <br><b>Project Structure:</b>
+
 <img src="https://github.com/rohinegi548/UIAutomationWithProtractorBasedOnPageObject/blob/master/images/Screenshot%20from%202018-05-22%2017-33-51.png"/>
+
 
 
 <p>Additionally jasmine is inbuilt framework comes with protractor, so if you are going to use jasmine spec reporter  you have to install it :
@@ -198,4 +206,4 @@ onPrepare: function() {
 <br>You can find jetty configuraton in pom.xml too.
 
 <br>In case you like it, please do share, hit like...
-</pre>
+
