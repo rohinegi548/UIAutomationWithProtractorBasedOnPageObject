@@ -63,12 +63,12 @@ Now you can go ahead with your advance level tests configuration and management.
     let SpecReporter = require('jasmine-spec-reporter').SpecReporter;
 
     onPrepare: function() {
-    jasmine.getEnv().addReporter(new SpecReporter({
-    displayFailuresSummary: true,
-    displayFailuredSpec: false,
-    displaySuiteNumber: true,
-    displaySpecDuration: true
-    }));
+     jasmine.getEnv().addReporter(new SpecReporter({
+      displayFailuresSummary: true,
+      displayFailuredSpec: false,
+      displaySuiteNumber: true,
+      displaySpecDuration: true
+     }));
     }
 
 
@@ -96,17 +96,17 @@ Now you can go ahead with your advance level tests configuration and management.
 
     var LoginData = require('../testdata/LoginData.json');
     LoginData.forEach(function(data, username, password) {
-    it('Login with: '+data.username+" and "+data.password, function() {
-    LoginObj.get();
-    LoginObj.login(data.username, data.password, data.answer);
-    expect(HomeObj.isLogoutDisplays());
-    })
-    });
+     it('Login with: ' + data.username + " and " + data.password, function() {
+      LoginObj.get();
+      LoginObj.login(data.username, data.password, data.answer);
+      expect(HomeObj.isLogoutDisplays());
+     })
+    });
 
 
 <br><b>Reading data using JS files: more usable and understandable</b><br>
 
-<p><b>NOTE: // has been used to comment out the particular lines to exclude from execution.</b></p?
+<p><b>NOTE: // has been used to comment out the particular lines to exclude from execution.</b></p>
     
     'use strict';
 
@@ -140,12 +140,12 @@ Now you can go ahead with your advance level tests configuration and management.
     var LoginData = require('../testdata/LoginData.js');
     var using = require('jasmine-data-provider');
     using(LoginData.LoginWithValidUserPasswd, function(data, description) {
-    it('Login with: '+description, function() {
-    LoginObj.get();
-    LoginObj.login(data.username, data.password, data.answer);
-    expect(HomeObj.isLogoutDisplays());
-    })
-    });
+     it('Login with: ' + description, function() {
+      LoginObj.get();
+      LoginObj.login(data.username, data.password, data.answer);
+      expect(HomeObj.isLogoutDisplays());
+     })
+    });
 
 
 <p><b>Reporting</b>: Allure is awesome reporting framework which you can use to generate test results having capability to attach screenshots as well.
@@ -159,22 +159,22 @@ Now you can go ahead with your advance level tests configuration and management.
 <p>You have to configure it in ,<b>conf.js</b> to work, so whenever you run your test it will generate allure-results directory with some json files that will be used further to generate allure report.
 <br>
     
-    onPrepare: function() {
-    
-    // Add a screenshot reporter:
-    
-    var AllureReporter = require('jasmine-allure-reporter');
-    jasmine.getEnv().addReporter(new AllureReporter({
-        resultsDir: 'allure-results'
-    }));
-    jasmine.getEnv().afterEach(function(done){
-        browser.takeScreenshot().then(function (png) {
-            allure.createAttachment('Screenshot', function () {
-                return new Buffer(png, 'base64')
-                }, 'image/png')();
-                done();
-                 })
-           }); 
+       onPrepare: function() {
+
+     // Add a screenshot reporter:
+
+     var AllureReporter = require('jasmine-allure-reporter');
+     jasmine.getEnv().addReporter(new AllureReporter({
+      resultsDir: 'allure-results'
+     }));
+     jasmine.getEnv().afterEach(function(done) {
+      browser.takeScreenshot().then(function(png) {
+       allure.createAttachment('Screenshot', function() {
+        return new Buffer(png, 'base64')
+       }, 'image/png')();
+       done();
+      })
+     });
     }
 
 <br><br><p>One last thing, as everytime your test will run so many json files will generate under allure-results directory. By default earlier generated files does not get deleted/removed, so when allure report generates, it’ll aggregate results for all the data not the latest run.
